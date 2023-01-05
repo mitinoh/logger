@@ -3,16 +3,21 @@ import { MongooseModule } from '@nestjs/mongoose/dist';
 import { LogModule } from './api/log/log.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { logConf, MONGO_CONNECTION, pth } from './conf/app.prop';
+import { logConf, pth } from './conf/app.prop';
 
 import { WinstonModule } from 'nest-winston';
+import { ConfigModule } from '@nestjs/config';
 
 const winston = require('winston');
 require('winston-daily-rotate-file');
 
 @Module({
   imports: [
-    MongooseModule.forRoot(MONGO_CONNECTION),
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath : '.env.prod'
+    }),
+    MongooseModule.forRoot(process.env.MONGO_CONNECTION),
     LogModule,
 
 

@@ -1,5 +1,3 @@
-export const MONGO_CONNECTION = ''
-
 export const auth = {
   isFromDart: false,
   tokenValid: true
