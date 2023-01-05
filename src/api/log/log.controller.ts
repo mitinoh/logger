@@ -22,7 +22,10 @@ export class LogController {
 
   @ApiQuery({ name: 'name', type: 'string', required: false })
   @Get()
-  findAll(@Req() req: Http2ServerRequest, @Query() query: any,) {
+  findAll(
+    @Req() req: Http2ServerRequest, 
+    @Query() query: any
+  ) {
     return this.logService.findAll(req, query);
   }
 
