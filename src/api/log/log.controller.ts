@@ -31,6 +31,6 @@ export class LogController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.logService.remove(+id);
+    return this.logService.removeById(+id);
   }
 }

@@ -9,6 +9,7 @@ import { Log, LogSchema } from './entities/log.entity';
   providers: [LogService],
   imports: [
     MongooseModule.forFeature([{ name: Log.name, schema: LogSchema }]),
-  ]
+  ],
+  exports: [LogService]
 })
-export class LogModule {}
+export class LogModule { }
