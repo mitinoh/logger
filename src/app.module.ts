@@ -28,10 +28,11 @@ require('winston-daily-rotate-file');
 
     WinstonModule.forRoot({
       exitOnError: false,
-      // format: winston.format.combine(
-      //   winston.format.timestamp(),
-      //   winston.format.json(),
-      // ),
+      format: winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.prettyPrint(),
+        winston.format.colorize()
+      ),
       transports: [
         new winston.transports.Console(),
         new (winston.transports.DailyRotateFile)({

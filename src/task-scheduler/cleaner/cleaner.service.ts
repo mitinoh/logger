@@ -11,14 +11,14 @@ export class CleanerService {
 
   // private readonly logger = new Logger(CleanerService.name);
 
-  @Cron(CronExpression.EVERY_10_SECONDS)
-  handleCron() {
-    let lastDate: Date = new Date(Date.now() - 604800000);
-    let query = {
-      date: {
-        $lte: lastDate.toISOString(),
-      }
-    }
-    this.logService.delete(query)
-  }
+  // @Cron(CronExpression.EVERY_10_SECONDS)
+  // handleCron() {
+  //   let lastDate: Date = new Date(Date.now() - 604800000);
+  //   let query = {
+  //     date: {
+  //       $lte: lastDate.toISOString(),
+  //     }
+  //   }
+  //   // this.logService.delete(query)
+  // }
 }

@@ -26,8 +26,8 @@ async function bootstrap() {
 
   // https://docs.nestjs.com/openapi/introduction
   const config = new DocumentBuilder()
-    .setTitle('nj2')
-    .setDescription('nj2 logger rest api ' + process.env.NODE_ENV)
+    .setTitle('logger')
+    .setDescription('logger rest api ' + process.env.NODE_ENV)
     .setVersion('1.0')
     .build();
 
